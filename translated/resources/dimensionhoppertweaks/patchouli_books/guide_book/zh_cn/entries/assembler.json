@@ -1,0 +1,16 @@
+{
+    "name": "组装器",
+    "icon": "patchouli:guide_book{'patchouli:book':'minecraft:book'}",
+    "category": "dimensionhoppertweaks:multiblocks",
+    "priority": true,
+    "pages": [
+        {
+            "type": "text",
+            "text": "组装器是一个能够组装高级机械的结构"
+        },
+        {
+            "type": "text",
+            "text": "另外，为了指导，这里有一个直接链接到前页的$(item)进度菜单$()，它可以更全面地查看整体进展"
+        }
+    ]
+}
