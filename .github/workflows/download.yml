@@ -35,3 +35,7 @@ jobs:
         with:
           add: translated
           message: New translated file from ParaTranz
+      - uses: actions/upload-artifact@v4
+        with:
+          name: "Dimension Hopper: The Fall汉化包build.${{ github.run_number }}"
+          path: translated/
