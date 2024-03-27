@@ -3,7 +3,7 @@ on:
   push:
     paths:
       - sources/**
-      - .github/workflows/**
+      - .github/**
 
 jobs:
   upload:
