@@ -1,0 +1,16 @@
+{
+    "name": "The Assembler",
+    "icon": "patchouli:guide_book{'patchouli:book':'minecraft:book'}",
+    "category": "dimensionhoppertweaks:multiblocks",
+    "priority": true,
+    "pages": [
+        {
+            "type": "text",
+            "text": "The assembler is a structure capable of assembling high tier machinery"
+        },
+        {
+            "type": "text",
+            "text": "Additionally, to guide here is a direct link to the $(item)Advancement menu$() on the front page, which allows a greater overview of the overall progress."
+        }
+    ]
+}
