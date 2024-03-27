@@ -42,7 +42,7 @@ async def main():
     with zipfile.ZipFile('artifacts.zip', 'r') as zip_ref:
         zip_ref.extractall('temp/')
 
-    for root, dirs, files in os.walk('temp\\utf8'):
+    for root, dirs, files in os.walk('temp/utf8'):
         for file in files:
             path = os.path.join(root, file).replace('\\', '/')
             new_path = 'translated' + path.replace('temp/utf8', '')

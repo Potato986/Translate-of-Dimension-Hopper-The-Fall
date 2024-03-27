@@ -58,12 +58,12 @@ async def main():
     for root, dirs, files in os.walk("sources"):
         for file in files:
             if file.endswith(".lang"):
-                pz = covert_lang_to_json(f'{root}\\{file}')
-                with open(f"{root}\\{file}.json", 'w', encoding='utf-8') as f:
+                pz = covert_lang_to_json(f'{root}/{file}')
+                with open(f"{root}/{file}.json", 'w', encoding='utf-8') as f:
                     json.dump(pz, f, ensure_ascii=False, indent=4)
-                await upload_project_file(f"{root}\\{file}.json")
+                await upload_project_file(f"{root}/{file}.json")
             if file.endswith('.json'):
-                await upload_project_file(f'{root}\\{file}')
+                await upload_project_file(f'{root}/{file}')
 
 
 if __name__ == '__main__':
