@@ -13,7 +13,7 @@ PROJECT_ID = 9743
 async def download_project():
     async with httpx.AsyncClient() as client:
         response = await client.post(
-            f'https://paratranz.cn/api/projects/{PROJECT_ID}/artifacts/download',
+            f'https://paratranz.cn/api/projects/{PROJECT_ID}/artifacts',
             headers={'Authorization': PARATRANZ_TOKEN}
         )
         response.raise_for_status()
