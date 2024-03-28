@@ -4,13 +4,14 @@ import os
 from typing import Optional
 
 import httpx
+from httpx import HTTPStatusError
 
 PARATRANZ_TOKEN = os.environ.get('PARATRANZ_TOKEN')
 PROJECT_ID = 9743
 
 paratranz_files = []
 
-
+MAX_RETRY = 3
 async def get_project_files():
     global paratranz_files
     async with httpx.AsyncClient() as client:
@@ -37,14 +38,20 @@ async def upload_project_file(path: str):
     else:
         url = f'https://paratranz.cn/api/projects/{PROJECT_ID}/files/{file_id}'
     async with httpx.AsyncClient() as client:
-        response = await client.post(
-            url,
-            headers={'Authorization': PARATRANZ_TOKEN},
-            data={'path': os.path.dirname(path)[8:]},
-            files={'file': (os.path.basename(path), open(path, 'rb'))}
-        )
-        response.raise_for_status()
-        print(f'{path} 上传成功')
+        for retry in range(MAX_RETRY):
+            try:
+                response = await client.post(
+                    url,
+                    headers={'Authorization': PARATRANZ_TOKEN},
+                    data={'path': os.path.dirname(path)[8:]},
+                    files={'file': (os.path.basename(path), open(path, 'rb'))}
+                )
+                response.raise_for_status()
+                print(f'{path} 上传成功')
+                break
+            except HTTPStatusError:
+                print(f'{path} 上传失败, 再尝试 {MAX_RETRY - retry - 1} 次')
+            await asyncio.sleep(0.7)
 
 
 def covert_lang_to_json(path: str) -> list:
