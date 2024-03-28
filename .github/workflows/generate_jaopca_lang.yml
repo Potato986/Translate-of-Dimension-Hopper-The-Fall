@@ -34,3 +34,7 @@ jobs:
         with:
           add: sources/config/jaopca/lang
           message: New generated JAOPCA lang file.
+  upload:
+    needs:
+      - generate
+    uses: .github/workflows/upload.yml

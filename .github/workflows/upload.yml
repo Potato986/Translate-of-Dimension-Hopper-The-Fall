@@ -4,6 +4,7 @@ on:
     paths:
       - sources/**
       - .github/**
+  workflow_call:
 
 jobs:
   upload:
