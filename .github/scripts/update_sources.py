@@ -49,7 +49,7 @@ async def upload_project_file(path: str):
                 response.raise_for_status()
                 print(f'{path} 上传成功')
                 break
-            except HTTPStatusError:
+            except Exception:
                 print(f'{path} 上传失败, 再尝试 {MAX_RETRY - retry - 1} 次')
             await asyncio.sleep(0.7)
 
