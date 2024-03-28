@@ -37,4 +37,4 @@ jobs:
   upload:
     needs:
       - generate
-    uses: .github/workflows/upload.yml
+    uses: ./.github/workflows/upload.yml
