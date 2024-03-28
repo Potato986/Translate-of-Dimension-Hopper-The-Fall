@@ -86,7 +86,8 @@ async def main():
             shutil.copy(en + '.json', en.replace('assets', 'sources/resources') + '.json')
             try:
                 await upload_project_file(en.replace('assets', 'sources/resources') + '.json')
-            except HTTPStatusError as e:
+            except Exception as e:
+                print(e)
                 print(en.replace('assets', 'sources/resources') + '.json' + ' 上传失败')
             await asyncio.sleep(0.7)
 

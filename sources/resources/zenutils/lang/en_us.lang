@@ -1,3 +1,0 @@
-commands.undefined.usage=Command Usage is undefined.
-tooltip.zenutils.energy=Energy: %s / %s RF
-message.zenutils.validate=Your scripts are different from the server. Ask the server admin for more info.
