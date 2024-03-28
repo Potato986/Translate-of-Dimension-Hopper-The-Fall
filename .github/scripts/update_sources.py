@@ -55,6 +55,8 @@ def covert_lang_to_json(path: str) -> list:
         if '=' not in line and line.startswith('#'):
             continue
         sp = line.split('=', maxsplit=1)
+        if len(sp) != 2:
+            continue
         rt.append({
             'key': sp[0],
             'original': sp[1]
