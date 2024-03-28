@@ -4,7 +4,6 @@ import os
 from typing import Optional
 
 import httpx
-from httpx import HTTPStatusError
 
 PARATRANZ_TOKEN = os.environ.get('PARATRANZ_TOKEN')
 PROJECT_ID = 9743
@@ -12,6 +11,8 @@ PROJECT_ID = 9743
 paratranz_files = []
 
 MAX_RETRY = 3
+
+
 async def get_project_files():
     global paratranz_files
     async with httpx.AsyncClient() as client:
