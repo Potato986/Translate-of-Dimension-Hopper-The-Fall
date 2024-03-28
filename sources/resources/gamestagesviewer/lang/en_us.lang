@@ -1,0 +1,12 @@
+
+# CONFIG
+config.stageviewerconfig.title=Game Stages Viewer Config
+gamestagesviewer.config.stageguititle=Stages Gui Title
+gamestagesviewer.config.nostagemessage=No Stages
+gamestagesviewer.config.stagevalues=Stage Config Values
+gamestagesviewer.config.stagestaby=Stage Tab Y offset
+gamestagesviewer.config.stageicon=Icon Indexes
+
+# TAB NAMES
+gamestagesviewer.tab.inventory=Inventory
+gamestagesviewer.tab.stages=Stages

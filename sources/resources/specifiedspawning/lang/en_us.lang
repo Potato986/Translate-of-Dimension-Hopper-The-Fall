@@ -1,0 +1,6 @@
+command.specifiedspawning.help=Usage: '/specifiedspawning reload'
+command.specifiedspawning.success=Reloaded rule file for Specified Spawning
+command.specifiedspawning.test.help=Usage: '/specifiedspawning test enum'
+command.specifiedspawning.test.enum.success=Enum of class %1$s is %2$s
+command.specifiedspawning.test.enum.empty=Unable to print unknown empty list of enum values
+command.specifiedspawning.test.enum.error=There was an unkown error trying to print a list of enum values

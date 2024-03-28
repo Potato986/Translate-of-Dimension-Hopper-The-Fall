@@ -4,3 +4,6 @@ venv/
 temp/
 
 *.zip
+
+assets/
+*.lang.json

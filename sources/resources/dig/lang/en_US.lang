@@ -1,0 +1,7 @@
+dig.config.title = Dig Config
+dig.features = Features
+dig.features.tooltip=
+
+commands.add_resource.usage   = /res_add (mod_name)parent_block_registry/ore_dict_name:metadata=durability|drop_registry/ore_dict_name:metadata=drop_chance
+commands.rem_resource.usage   = /res_rem [index1, ..., indexN]
+commands.list_resources.usage = /res_list [all|block_registry/ore_dict_name|drop_registry/ore_dict_name]

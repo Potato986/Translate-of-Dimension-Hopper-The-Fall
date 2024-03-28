@@ -47,10 +47,19 @@ async def upload_project_file(path: str):
         print(f'{path} 上传成功')
 
 
-def covert_lang_to_json(path: str) -> dict:
+def covert_lang_to_json(path: str) -> list:
     with open(path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
-    return dict(line.strip().split('=') for line in lines if '=' in line)
+    rt = []
+    for line in lines:
+        if '=' not in line and line.startswith('#'):
+            continue
+        sp = line.split('=', maxsplit=1)
+        rt.append({
+            'key': sp[0],
+            'original': sp[1]
+        })
+    return rt
 
 
 async def main():
