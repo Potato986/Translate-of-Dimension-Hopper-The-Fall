@@ -1,4 +1,4 @@
-multiblocked.recipe_map.assembler_recipes=Assembler
+multiblocked.recipe_map.assembler_recipes=装配机
 multiblocked.recipe_map.oil_cracker_mk_1_recipes=Oil Cracker Mk 1
 multiblocked.recipe_map.oil_cracker_mk_2_recipes=Oil Cracker Mk 2
 multiblocked.recipe_map.oil_cracker_mk_3_recipes=Oil Cracker Mk 3
@@ -16,7 +16,7 @@ multiblocked.recipe_map.lightning_infuser_mk_2_recipes=Lightning Infuser Mk 2
 multiblocked.recipe_map.lightning_infuser_mk_3_recipes=Lightning Infuser Mk 3
 multiblocked.recipe_map.lightning_infuser_mk_4_recipes=Lightning Infuser Mk 4
 multiblocked.recipe_map.infinity_infuser_recipes=Infinity Infuser
-assembler.name=Assembler
+assembler.name=装配机
 the_factory_mk_1.name=The Factory Mk 1
 the_factory_mk_2.name=The Factory Mk 2
 the_factory_mk_3.name=The Factory Mk 3
