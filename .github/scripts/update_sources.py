@@ -55,21 +55,10 @@ async def upload_project_file(path: str):
             await asyncio.sleep(0.7)
 
 
-def covert_lang_to_json(path: str) -> list:
+def covert_lang_to_json(path: str) -> dict:
     with open(path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
-    rt = []
-    for line in lines:
-        if '=' not in line and line.startswith('#'):
-            continue
-        sp = line.split('=', maxsplit=1)
-        if len(sp) != 2:
-            continue
-        rt.append({
-            'key': sp[0],
-            'original': sp[1]
-        })
-    return rt
+    return dict(line.strip().split('=', maxsplit=1) for line in lines if '=' in line and not line.startswith('#'))
 
 
 async def main():
