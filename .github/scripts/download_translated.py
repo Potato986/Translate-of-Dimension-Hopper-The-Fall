@@ -42,6 +42,45 @@ def covert_paratranz_json_to_json(json_file: str) -> dict:
     return dict([(t["key"], t["translation"] if t["translation"] != "" else t["original"]) for t in translated])
 
 
+def read_lang(lang_path) -> dict:
+    with open(lang_path, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+    return dict(line.strip().split('=') for line in lines if '=' in line and not line.startswith('#'))
+
+
+def replace_quest_book():
+    with open('sources/config/betterquesting/langquests.json', 'r', encoding='utf-8') as f:
+        lang_quest = json.load(f)
+    translated = read_lang('translated/config/betterquesting/resources/dimensionhopper/lang/zh_cn.lang')
+
+    result = []
+
+    def change_value(v: str):
+        t = lang_quest
+        for k in result[:-1]:
+            t = t[k]
+        t[result[-1]] = v
+
+    def travel_dict(d):
+        if isinstance(d, dict):
+            for k, v in d.items():
+                result.append(k)
+                travel_dict(v)
+                result.pop()
+        if isinstance(d, list):
+            for i, v in enumerate(d):
+                result.append(i)
+                travel_dict(v)
+                result.pop()
+        if isinstance(d, str):
+            if d in translated:
+                change_value(translated[d])
+
+    travel_dict(lang_quest)
+    with open('translated/config/betterquesting/DefaultQuests.json', 'w', encoding='utf-8') as f:
+        json.dump(lang_quest, f, ensure_ascii=False, indent=2)
+
+
 async def main():
     await download_project()
     with zipfile.ZipFile('artifacts.zip', 'r') as zip_ref:
@@ -62,6 +101,8 @@ async def main():
                     json.dump(lang, f, ensure_ascii=False, indent=4)
 
     shutil.rmtree('temp')
+
+    replace_quest_book()
 
 
 if __name__ == '__main__':
