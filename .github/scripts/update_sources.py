@@ -1,6 +1,7 @@
 import asyncio
 import json
 import os
+import re
 from typing import Optional
 
 import httpx
@@ -58,7 +59,12 @@ async def upload_project_file(path: str):
 def covert_lang_to_json(path: str) -> dict:
     with open(path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
-    return dict(line.strip().split('=', maxsplit=1) for line in lines if '=' in line and not line.startswith('#'))
+
+    return dict(
+        re.sub(r'\\u([0-9a-fA-F]{4})', lambda x: chr(int(x.group(1), 16)), line).replace('\\n', '\n').split('=', maxsplit=1)
+        for line in lines
+        if '=' in line and not line.startswith('#')
+    )
 
 
 async def main():
