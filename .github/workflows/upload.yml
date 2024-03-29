@@ -6,6 +6,8 @@ on:
       - .github/**
   workflow_call:
 
+permissions: write-all
+
 jobs:
   download:
     uses: ./.github/workflows/download.yml
