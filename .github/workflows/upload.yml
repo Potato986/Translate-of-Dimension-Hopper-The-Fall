@@ -10,9 +10,8 @@ permissions: write-all
 
 jobs:
   download:
-    env:
-      PARATRANZ_TOKEN: ${{ secrets.PARATRANZ_TOKEN }}
     uses: ./.github/workflows/download.yml
+    secrets: inherit
   upload:
     runs-on: ubuntu-latest
     needs:
