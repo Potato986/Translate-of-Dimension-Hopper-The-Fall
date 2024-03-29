@@ -53,11 +53,11 @@ async def main():
             new_path = 'translated' + path.replace('temp/utf8', '')
             os.makedirs(os.path.dirname(new_path), exist_ok=True)
             if file.endswith('.lang.json'):
-                lang = covert_paratranz_json_to_lang(path).replace('\\n', '\n')
+                lang = covert_paratranz_json_to_lang(path)
                 with open(f'{os.path.dirname(new_path)}/zh_cn.lang', 'w', encoding='utf-8') as f:
                     f.write(lang)
             if file.endswith('.json') and '.lang' not in file:
-                lang = covert_paratranz_json_to_json(path).replace('\\n', '\n')
+                lang = covert_paratranz_json_to_json(path)
                 with open(f'{os.path.dirname(new_path)}/zh_cn.json', 'w', encoding='utf-8') as f:
                     json.dump(lang, f, ensure_ascii=False, indent=4)
 
