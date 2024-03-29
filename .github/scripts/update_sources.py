@@ -61,7 +61,7 @@ def covert_lang_to_json(path: str) -> dict:
         lines = f.readlines()
 
     return dict(
-        re.sub(r'\\u([0-9a-fA-F]{4})', lambda x: chr(int(x.group(1), 16)), line).replace('\\n', '\n').split('=', maxsplit=1)
+        re.sub(r'\\u([0-9a-fA-F]{4})', lambda x: chr(int(x.group(1), 16)), line.strip('\n')).replace('\\n', '\n').split('=', maxsplit=1)
         for line in lines
         if '=' in line and not line.startswith('#')
     )
@@ -75,9 +75,10 @@ async def main():
                 pz = covert_lang_to_json(f'{root}/{file}')
                 with open(f"{root}/{file}.json", 'w', encoding='utf-8') as f:
                     json.dump(pz, f, ensure_ascii=False, indent=4)
-                await upload_project_file(f"{root}/{file}.json")
+                # await upload_project_file(f"{root}/{file}.json")
             if file.endswith('.json'):
-                await upload_project_file(f'{root}/{file}')
+                # await upload_project_file(f'{root}/{file}')
+                ...
 
 
 if __name__ == '__main__':
