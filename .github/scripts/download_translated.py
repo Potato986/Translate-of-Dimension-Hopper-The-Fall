@@ -32,7 +32,7 @@ def covert_paratranz_json_to_lang(json_file: str) -> str:
         translated = json.load(f)
 
     return '\n'.join(
-        [f'{t["key"]}={t["translation"] if t["translation"] != "" else t["original"]}' for t in translated]
+        [f'{t["key"]}={t["translation"] if t["translation"] != "" else t["original"]}'.replace('\n', '%n') for t in translated]
     )
 
 

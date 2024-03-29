@@ -39,3 +39,7 @@ jobs:
         with:
           name: "chinese-build.${{ github.run_number }}"
           path: translated/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paratranz
+          path: artifacts.zip
