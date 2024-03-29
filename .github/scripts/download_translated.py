@@ -11,20 +11,26 @@ PROJECT_ID = 9743
 
 
 async def download_project():
-    async with httpx.AsyncClient() as client:
-        response = await client.post(
-            f'https://paratranz.cn/api/projects/{PROJECT_ID}/artifacts',
-            headers={'Authorization': PARATRANZ_TOKEN}
-        )
-        response.raise_for_status()
-        response = await client.get(
-            f'https://paratranz.cn/api/projects/{PROJECT_ID}/artifacts/download',
-            headers={'Authorization': PARATRANZ_TOKEN},
-            follow_redirects=True
-        )
-        response.raise_for_status()
-        with open('artifacts.zip', 'wb') as file:
-            file.write(response.content)
+    for retry in range(3):
+        try:
+            async with httpx.AsyncClient() as client:
+                response = await client.post(
+                    f'https://paratranz.cn/api/projects/{PROJECT_ID}/artifacts',
+                    headers={'Authorization': PARATRANZ_TOKEN}
+                )
+                response.raise_for_status()
+                response = await client.get(
+                    f'https://paratranz.cn/api/projects/{PROJECT_ID}/artifacts/download',
+                    headers={'Authorization': PARATRANZ_TOKEN},
+                    follow_redirects=True
+                )
+                response.raise_for_status()
+                with open('artifacts.zip', 'wb') as file:
+                    file.write(response.content)
+            break
+        except Exception as e:
+            print('下载失败')
+
 
 
 def covert_paratranz_json_to_lang(json_file: str) -> str:
