@@ -81,15 +81,15 @@ async def main():
         if pz:
             with open(en + '.json', 'w', encoding='utf-8') as f:
                 json.dump(pz, f, ensure_ascii=False, indent=4)
-            os.makedirs(os.path.dirname(en.replace('assets', 'sources/resources')), exist_ok=True)
-            shutil.copy(en, en.replace('assets', 'sources/resources'))
-            shutil.copy(en + '.json', en.replace('assets', 'sources/resources') + '.json')
-            try:
-                await upload_project_file(en.replace('assets', 'sources/resources') + '.json')
-            except Exception as e:
-                print(e)
-                print(en.replace('assets', 'sources/resources') + '.json' + ' 上传失败')
-            await asyncio.sleep(0.7)
+            # os.makedirs(os.path.dirname(en.replace('assets', 'sources/resources')), exist_ok=True)
+            # shutil.copy(en, en.replace('assets', 'sources/resources'))
+            # shutil.copy(en + '.json', en.replace('assets', 'sources/resources') + '.json')
+            # try:
+            #     await upload_project_file(en.replace('assets', 'sources/resources') + '.json')
+            # except Exception as e:
+            #     print(e)
+            #     print(en.replace('assets', 'sources/resources') + '.json' + ' 上传失败')
+            # await asyncio.sleep(0.7)
 
 
 if __name__ == '__main__':

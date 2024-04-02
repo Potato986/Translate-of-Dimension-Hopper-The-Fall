@@ -32,13 +32,12 @@ async def download_project():
             print('下载失败')
 
 
-
 def covert_paratranz_json_to_lang(json_file: str) -> str:
     with open(json_file, 'r', encoding='utf-8') as f:
         translated = json.load(f)
 
     return '\n'.join(
-        [f'{t["key"]}={t["translation"] if t["translation"] != "" else t["original"]}'.replace('\n', '%n') for t in translated]
+        [f'{t["key"]}={t["translation"] if t["translation"] != "" else t["original"]}' for t in translated]
     )
 
 
@@ -59,7 +58,7 @@ async def main():
             new_path = 'translated' + path.replace('temp/utf8', '')
             os.makedirs(os.path.dirname(new_path), exist_ok=True)
             if file.endswith('.lang.json'):
-                lang = covert_paratranz_json_to_lang(path)
+                lang = covert_paratranz_json_to_lang(path).replace('\\n', '%n')
                 with open(f'{os.path.dirname(new_path)}/zh_cn.lang', 'w', encoding='utf-8') as f:
                     f.write(lang)
             if file.endswith('.json') and '.lang' not in file:
