@@ -53,12 +53,12 @@ jobs:
 
       - name: Zip
         run: |
-          zip -r chinese-build.${{ github.run_number }}.zip chinese-build.${{ github.run_number }}
+          zip -r “Translate for Dimension Hopper:The Fall.zip” chinese-build.${{ github.run_number }}
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          title: Translate for Dimension Hopper:The Fall-pre5
+          title: Translate for Dimension Hopper:The Fall-pre4
           automatic_release_tag: build.${{ github.run_number }}
           files: |
             Translate for Dimension Hopper:The Fall.zip
