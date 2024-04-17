@@ -58,7 +58,7 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          title: Translate for Dimension Hopper:The Fall-pre6
+          title: Translate for Dimension Hopper:The Fall-pre7
           automatic_release_tag: build.${{ github.run_number }}
           files: |
             Translate for Dimension Hopper:The Fall.zip
