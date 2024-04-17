@@ -37,7 +37,7 @@ jobs:
           message: New translated file from ParaTranz
       - uses: actions/upload-artifact@v4
         with:
-          name: "chinese-build.${{ github.run_number }}"
+          name: "Translate for Dimension Hopper:The Fall"
           path: translated/
       - uses: actions/upload-artifact@v4
         with:
@@ -49,7 +49,7 @@ jobs:
       - download
     steps:
       - uses: actions/download-artifact@v4
-        name: "chinese-build.${{ github.run_number }}"
+        name: "Translate for Dimension Hopper:The Fall"
 
       - name: Zip
         run: |
@@ -58,7 +58,7 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          title: Translate for Dimension Hopper:The Fall-pre4
+          title: Translate for Dimension Hopper:The Fall-pre6
           automatic_release_tag: build.${{ github.run_number }}
           files: |
             Translate for Dimension Hopper:The Fall.zip
