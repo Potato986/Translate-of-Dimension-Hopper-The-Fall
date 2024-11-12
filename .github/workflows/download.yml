@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.2
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.1.0
         with:
           python-version: 3.11
-      - uses: actions/cache@v4
+      - uses: actions/cache@v4.0.2
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -37,32 +37,29 @@ jobs:
           message: New translated file from ParaTranz
       - uses: actions/upload-artifact@v4
         with:
-          name: "Dimension_Hopper_The_Fall-1.5.6"
+          name: "Dimension Hoppper:The fall-1.5.6"
           path: translated/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paratranz
+          path: artifacts.zip
   release:
     runs-on: ubuntu-latest
     needs:
       - download
     steps:
       - uses: actions/download-artifact@v4
-        name: "Dimension_Hopper_The_Fall-1.5.6"
-        with:
-         name: "Dimension_Hopper_The_Fall-1.5.6"
-
-      - name: Move files to translated directory
-        run: |
-           mkdir -p translated
-           mv Dimension_Hopper_The_Fall-1.5.6/* translated/
+        name: "Dimension Hoppper:The fall-1.5.6"
 
       - name: Zip
         run: |
-          zip -r "Dimension_Hopper_The_Fall-1.5.6.zip" translated/
+          zip -r "Dimension Hoppper:The fall-1.5.6.zip" chinese-build.${{ github.run_number }}
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          title: Dimension_Hopper_The_Fall-1.5.6
+          title: Dimension Hoppper:The fall-1.5.6
           automatic_release_tag: build.${{ github.run_number }}
           files: |
-            Dimension_Hopper_The_Fall-1.5.6.zip
+            Dimension Hoppper:The fall-1.5.6.zip
           prerelease: false
