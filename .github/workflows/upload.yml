@@ -9,10 +9,12 @@ on:
 permissions: write-all
 
 jobs:
+  call-download:
+    uses: ./.github/workflows/download.yml
+    
   upload:
     runs-on: ubuntu-latest
-    needs:
-      - download
+    needs: call-download
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.2
