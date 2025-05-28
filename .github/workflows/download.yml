@@ -83,4 +83,4 @@ jobs:
           automatic_release_tag: build.${{ github.run_number }}
           files: |
             Translate for Dimension Hopper:The Fall-1.5.9.1.zip
-          prerelease: True
+          prerelease: False
