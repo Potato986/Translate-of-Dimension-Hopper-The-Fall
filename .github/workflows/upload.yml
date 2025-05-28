@@ -11,6 +11,8 @@ permissions: write-all
 jobs:
   call-download:
     uses: ./.github/workflows/download.yml
+    secrets:
+      PARATRANZ_TOKEN: ${{ secrets.PARATRANZ_TOKEN }}
     
   upload:
     runs-on: ubuntu-latest
