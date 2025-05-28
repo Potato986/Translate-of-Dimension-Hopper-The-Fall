@@ -8,6 +8,9 @@ on:
     branches:
       - main
   workflow_call:  
+    secrets:
+      PARATRANZ_TOKEN:
+        required: true
 
 permissions: 
   contents: write
