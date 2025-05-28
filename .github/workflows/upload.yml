@@ -10,12 +10,9 @@ permissions: write-all
 
 jobs:
   call-download:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Call download workflow
-        uses: ./.github/workflows/download.yml
-        secrets:
-          PARATRANZ_TOKEN: ${{ secrets.PARATRANZ_TOKEN }}
+    uses: ./.github/workflows/download.yml
+    secrets:
+      PARATRANZ_TOKEN: ${{ secrets.PARATRANZ_TOKEN }}
 
   upload:
     runs-on: ubuntu-latest
@@ -46,4 +43,3 @@ jobs:
           PARATRANZ_TOKEN: ${{ secrets.PARATRANZ_TOKEN }}
         run: |
           python .github/scripts/update_sources.py
-
