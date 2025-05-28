@@ -1,6 +1,5 @@
 name: Download ParaTranz translations
 on:
-  workflow_call:
   workflow_dispatch:
 
 permissions: 
