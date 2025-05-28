@@ -69,18 +69,18 @@ jobs:
       - download
     steps:
       - uses: actions/download-artifact@v4
-        name: "Translate for Dimension Hopper:The Fall-1.5.6"
+        name: "Translate for Dimension Hopper:The Fall-1.5.9.1"
 
       - name: Zip
         run: |
           mv chinese-build.${{ github.run_number }} translated
-          zip -r "Translate for Dimension Hopper:The Fall-1.5.6.zip" translated
+          zip -r "Translate for Dimension Hopper:The Fall-1.5.9.1.zip" translated
 
       - uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          title: Translate for Dimension Hopper:The Fall-1.5.6
+          title: Translate for Dimension Hopper:The Fall-1.5.9.1
           automatic_release_tag: build.${{ github.run_number }}
           files: |
-            Translate for Dimension Hopper:The Fall-1.5.6.zip
-          prerelease: false
+            Translate for Dimension Hopper:The Fall-1.5.9.1.zip
+          prerelease: True
