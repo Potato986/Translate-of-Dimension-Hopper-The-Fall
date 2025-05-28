@@ -16,7 +16,12 @@ multiblocked.recipe_map.lightning_infuser_mk_1_recipes=Lightning Infuser Mk 1
 multiblocked.recipe_map.lightning_infuser_mk_2_recipes=Lightning Infuser Mk 2
 multiblocked.recipe_map.lightning_infuser_mk_3_recipes=Lightning Infuser Mk 3
 multiblocked.recipe_map.lightning_infuser_mk_4_recipes=Lightning Infuser Mk 4
-multiblocked.recipe_map.infinity_infuser_recipes=Infinity Infuser
+multiblocked.recipe_map.lightning_infuser_mk_5_recipes=Infinity Infuser
+multiblocked.recipe_map.lightning_reactor_mk_1_recipes=Lightning Reactor
+multiblocked.recipe_map.lightning_relocator_mk_1_recipes=Lightning Relocator Mk 1
+multiblocked.recipe_map.lightning_relocator_mk_2_recipes=Lightning Relocator Mk 2
+multiblocked.recipe_map.lightning_relocator_mk_3_recipes=Lightning Relocator Mk 3
+multiblocked.recipe_map.lightning_relocator_mk_4_recipes=Lightning Relocator Mk 4
 
 //controllers
 assembler.name=Assembler
@@ -39,8 +44,40 @@ lightning_infuser_mk_1.name=Lightning Infuser Mk 1
 lightning_infuser_mk_2.name=Lightning Infuser Mk 2
 lightning_infuser_mk_3.name=Lightning Infuser Mk 3
 lightning_infuser_mk_4.name=Lightning Infuser Mk 4
-infinity_infuser.name=Infinity Infuser
+lightning_infuser_mk_5.name=Infinity Infuser
+lightning_reactor_mk_1.name=Lightning Reactor
+lightning_relocator_mk_1.name=Lightning Relocator Mk 1
+lightning_relocator_mk_2.name=Lightning Relocator Mk 2
+lightning_relocator_mk_3.name=Lightning Relocator Mk 3
+lightning_relocator_mk_4.name=Lightning Relocator Mk 4
 
+//controller descriptions
+dimensionhopper.assembler.description=A strange assortment of technology and divinity bundled together in order to make high tier machinery that would otherwise be impossible to craft
+dimensionhopper.ectoplasmic_generator.description=A curious formation that can utilize the properties of the spectre realm to generate some power or specicially enhance some materials
+dimensionhopper.lightning_infuser_mk_1.description=Uses the power of lightning to combine materials in strange ways
+dimensionhopper.lightning_infuser_mk_2.description=Uses more lightning to combine materials a bit faster
+dimensionhopper.lightning_infuser_mk_3.description=Uses massive amounts of lightning energy to combine materials even faster
+dimensionhopper.lightning_infuser_mk_4.description=Uses way too much lightning energy to combine materials quickly
+dimensionhopper.lightning_infuser_mk_5.description=Aptly named
+dimensionhopper.lightning_reactor_mk_1.description=A specialized reactor that utilizes enhanced diamonds, mana, electricium, and massive amounts of heat to effectively multiply lightning energy
+dimensionhopper.lightning_relocator_mk_1.description=A specialized cell able to very quickly extract 55% of the lightning energy from the cell above it and transfer it to the cell below
+dimensionhopper.lightning_relocator_mk_2.description=A specialized cell able to very quickly extract 70% of the lightning energy from the cell above it and transfer it to the cell below
+dimensionhopper.lightning_relocator_mk_3.description=A specialized cell able to very quickly extract 85% of the lightning energy from the cell above it and transfer it to the cell below
+dimensionhopper.lightning_relocator_mk_4.description=A specialized cell able to very quickly extract all of the lightning energy from the cell above it and transfer it to the cell below
+dimensionhopper.limbonic_generator.description=A massive structure that can generate massive amounts of power
+dimensionhopper.psionic_generator_mk_1.description=A magical structure that can automatically create magical materials
+dimensionhopper.psionic_generator_mk_2.description=A magical structure that can quickly and automatically create magical materials
+dimensionhopper.psionic_generator_mk_3.description=A magical structure that can automate magical materials at insane speeds
+dimensionhopper.oil_cracker_mk_1.description=A special box used to crack coal & tar into into oil
+dimensionhopper.oil_cracker_mk_2.description=A special box used to quickly crack coal & tar into into oil
+dimensionhopper.oil_cracker_mk_3.description=A very special box used to very quickly crack coal & tar into into oil
+dimensionhopper.rocket_t1.description=This is a rocket! (What did you expect?)
+dimensionhopper.rocket_t7.description=This is a better rocket! (Did you expect anything else?)
+dimensionhopper.rocket_t10.description=This is the best rocket! (Have you gone to Perdita yet? There are some funny purple diamonds there!)
+dimensionhopper.the_factory_mk_1.description=Quickly compresses/decompresses high tier materials too advanced for a basic factorizer to work with
+dimensionhopper.the_factory_mk_2.description=Very quickly compresses/decompresses high tier materials too advanced for a basic factorizer to work with
+dimensionhopper.the_factory_mk_3.description=Compresses/decompresses high tier materials faster than you can read this
+dimensionhopper.the_singularity.description=An infuriatingly intricate structure that a utilizes a mini black hole to compress matter into impossibly dense forms
 
 //controller blocks
 tile.dimensionhopper.assembler.name=Assembler Controller
@@ -63,7 +100,12 @@ tile.dimensionhopper.lightning_infuser_mk_1.name=Lightning Infuser Mk 1 Controll
 tile.dimensionhopper.lightning_infuser_mk_2.name=Lightning Infuser Mk 2 Controller
 tile.dimensionhopper.lightning_infuser_mk_3.name=Lightning Infuser Mk 3 Controller
 tile.dimensionhopper.lightning_infuser_mk_4.name=Lightning Infuser Mk 4 Controller
-tile.dimensionhopper.infinity_infuser.name=Infinity Infuser Controller
+tile.dimensionhopper.lightning_infuser_mk_5.name=Infinity Infuser Controller
+tile.dimensionhopper.lightning_reactor_mk_1.name=Lightning Reactor Controller
+tile.dimensionhopper.lightning_relocator_mk_1.name=Lightning Relocator Mk 1 Controller
+tile.dimensionhopper.lightning_relocator_mk_2.name=Lightning Relocator Mk 2 Controller
+tile.dimensionhopper.lightning_relocator_mk_3.name=Lightning Relocator Mk 3 Controller
+tile.dimensionhopper.lightning_relocator_mk_4.name=Lightning Relocator Mk 4 Controller
 
 //parts
 tile.dimensionhopper.limbonic_fluid_hatch.name=Limbonic Fluid Hatch
